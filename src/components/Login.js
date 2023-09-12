@@ -6,7 +6,7 @@ import { auth } from '../utils/firebase';
 // import { useNavigate } from 'react-router-dom';
 import { addUser } from '../utils/userSlice';
 import { useDispatch } from 'react-redux';
-
+import { BG , AVATAR} from '../utils/constants';
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -33,7 +33,7 @@ const Login = () => {
         .then((userCredential) => {
           const user = userCredential.user;
           updateProfile(auth.currentUser, {
-            displayName: fullname.current.value, photoURL: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png?20201013161117"
+            displayName: fullname.current.value, photoURL: AVATAR
           }).then(() => {
             const {uid, email, displayName, photoURL} = auth.currentUser;
             dispatch(addUser({uid: uid, email: email, displayName: displayName, photoURL: photoURL}))  
@@ -68,7 +68,7 @@ const Login = () => {
     <>
     <Header/>
       <div className="absolute">
-        <img className="h-screen w-screen object-cover" src="https://assets.nflxext.com/ffe/siteui/vlv3/fc164b4b-f085-44ee-bb7f-ec7df8539eff/d23a1608-7d90-4da1-93d6-bae2fe60a69b/IN-en-20230814-popsignuptwoweeks-perspective_alpha_website_large.jpg" alt="bg" />
+        <img className="h-screen w-screen object-cover" src={BG} alt="bg" />
       </div>
       <from className="absolute w-3/12 p-12 bg-black my-36 mx-auto right-0 left-0 text-white rounded-lg bg-opacity-80">
         <h1 className='p-4 text-3xl' >{isSignIn ? "Sign In" : "Sign Up"}</h1>
