@@ -11,8 +11,5 @@ export const API_OPTIONS = {
       Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1ZGI0NDZhNjNmNDEwMGY1YjIwNGEzZThiMzVkY2FiMSIsInN1YiI6IjY1MDAwZjQxMWJmMjY2MDEzYTc0ZjFhNyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.u33icN0iWn1gGuonCfWK76j-7ZuNyMRQcdOhWc0M79k'
     }
   };
-  
-//   fetch('https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1', options)
-//     .then(response => response.json())
-//     .then(response => console.log(response))
-//     .catch(err => console.error(err));
+
+export const IMG_CDN = "https://image.tmdb.org/t/p/w500"
