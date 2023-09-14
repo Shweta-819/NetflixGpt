@@ -68,7 +68,7 @@ const Login = () => {
     <>
     <Header/>
       <div className="fixed">
-        <img className="h-screen object-cover" src={BG} alt="bg" />
+        <img className="h-screen w-screen object-cover" src={BG} alt="bg" />
       </div>
       <from className="absolute md:w-3/12 w-full p-12 bg-black my-36 mx-auto right-0 left-0 text-white rounded-lg bg-opacity-80">
         <h1 className='p-4 md:text-3xl text-xl' >{isSignIn ? "Sign In" : "Sign Up"}</h1>
