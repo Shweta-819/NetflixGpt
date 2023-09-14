@@ -15,7 +15,6 @@ const GptSeachBar = () => {
     const langkey = useSelector((store)=> store.config.lang)
     const inputtext= useRef(null);
     const searchMovieTmdb = async(movie) => {
-        // const movieData = fetch(`https://api.themoviedb.org/3/search/${movie}?include_adult=false&language=en-US&page=1`, API_OPTIONS)
         const data = await fetch(
             "https://api.themoviedb.org/3/search/movie?query=" +
               movie +
@@ -40,9 +39,10 @@ const GptSeachBar = () => {
         const movieRes= gptresult?.choices[0].message.content.split(',')
         const promiseArray = (movieRes)?.map((movie)=> searchMovieTmdb(movie))
         const movieResult = await Promise.all(promiseArray);
-        console.log(movieResult)
+        // console.log(movieResult)
         const result = movieResult.map((movie, index)=>(movie.results))
-        console.log(result);
+        // console.log(result);
+        // const filteredResult = result.filter((movie)=>(movie.title === inputtext?.current.value ))
         dispatch(addGptMovieResult({gptMoviesNames:movieRes ,gptMoviesResult:result}));
 
     }
