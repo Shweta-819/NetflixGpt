@@ -49,12 +49,12 @@ const Header = () => {
  
 
   return (
-    <div className="absolute w-screen px-8 py-2 bg-gradient-to-b from-black z-10 flex flex-col md:flex-row justify-between">
-      <img className="w-48 mx-auto md:mx-0" src={LOGO} alt="logo" />
-      <div className='flex'>
+    <div className="fixed w-screen px:0 md:px-8 py-0 md:py-2 bg-gradient-to-b from-black z-10 flex flex-col md:flex-row justify-between">
+      <img className="w-48 mx-auto pt-[2%] md:mx-0" src={LOGO} alt="logo" />
+      <div className='flex justify-between -pt:[5%] md:pt-0 md:m-5'>
         {user  && (<>
         {showGptSearch ? (<select
-            className="p-4 m-6 bg-gray-900 text-white rounded-sm w-40"
+            className="p-2 m-2 bg-gray-900 text-white"
             onChange={handleLanguageChange}
           >
             {SUPPORTED_LANGUAGES.map((lang) => (
@@ -64,10 +64,10 @@ const Header = () => {
             ))}
           </select>): (null)}
           
-          <button className='bg-indigo-700 text-white rounded-lg m-6 px-4' onClick={handleGPT} >{showGptSearch ?  "Home Page" : 'GPT Search'}</button>
+          <button className='py-2 px-4 mx-4 my-2 bg-purple-800 text-white rounded-lg' onClick={handleGPT} >{showGptSearch ?  "Home Page" : 'GPT Search'}</button>
 
-          <img className='w-12 h-12 my-6 ' src={user?.photoURL} alt="user" />
-          <button className='m-2 text-white text-lg rounded-lg m-6 px-4 bg-lime-800' onClick={handleSignout}>SignOut</button></>)}
+          {/* <img className='w-12 h-12 my-6 ' src={user?.photoURL} alt="user" /> */}
+          <button className='text-white rounded-lg bg-lime-800 py-2 px-4 mx-4 my-2 md:mx-4 ' onClick={handleSignout}>Sign Out</button></>)}
 
       </div>
 

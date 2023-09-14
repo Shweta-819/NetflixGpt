@@ -67,11 +67,11 @@ const Login = () => {
   return (
     <>
     <Header/>
-      <div className="absolute">
-        <img className="h-screen w-screen object-cover" src={BG} alt="bg" />
+      <div className="fixed">
+        <img className="h-screen object-cover" src={BG} alt="bg" />
       </div>
-      <from className="absolute w-3/12 p-12 bg-black my-36 mx-auto right-0 left-0 text-white rounded-lg bg-opacity-80">
-        <h1 className='p-4 text-3xl' >{isSignIn ? "Sign In" : "Sign Up"}</h1>
+      <from className="absolute md:w-3/12 w-full p-12 bg-black my-36 mx-auto right-0 left-0 text-white rounded-lg bg-opacity-80">
+        <h1 className='p-4 md:text-3xl text-xl' >{isSignIn ? "Sign In" : "Sign Up"}</h1>
         {!isSignIn && <input ref={fullname} className="p-4 my-2 w-full rounded-lg  text-black" type="text" placeholder='Full Name'></input>}
         <input ref={email} className="p-4 my-2 w-full rounded-lg text-black" type="text" placeholder='Email address'></input>
         <input ref={password} className="p-4 my-2 w-full rounded-lg text-black" type="password" placeholder='Password'></input>

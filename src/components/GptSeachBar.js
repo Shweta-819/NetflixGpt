@@ -35,22 +35,18 @@ const GptSeachBar = () => {
             model: 'gpt-3.5-turbo',
     });
         
-
         const movieRes= gptresult?.choices[0].message.content.split(',')
         const promiseArray = (movieRes)?.map((movie)=> searchMovieTmdb(movie))
         const movieResult = await Promise.all(promiseArray);
-        // console.log(movieResult)
         const result = movieResult.map((movie, index)=>(movie.results))
-        // console.log(result);
-        // const filteredResult = result.filter((movie)=>(movie.title === inputtext?.current.value ))
         dispatch(addGptMovieResult({gptMoviesNames:movieRes ,gptMoviesResult:result}));
 
     }
   return (
    
      <>
-     <div className='pt-[10%] flex justify-center'>
-              <form className='bg-black bg-opacity-100 w-1/2 flex rounded-lg z-30' onSubmit={(e)=> e.preventDefault()}>
+     <div className='md:pt-[10%] pt-[35%] flex justify-center'>
+              <form className='bg-black bg-opacity-100 md:w-1/2 w-screen flex rounded-lg z-30' onSubmit={(e)=> e.preventDefault()}>
                   <input ref={inputtext} type="text" placeholder={lang[langkey].gptSearchPlaceholder} className='p-4 m-4 flex-1'></input>
                   <button className='bg-red-700 rounded-lg flex-6 m-4 p-4 text-white' onClick={handleGpt}>{lang[langkey].search}</button>
               </form>
