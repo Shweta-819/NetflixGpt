@@ -2,6 +2,8 @@ import React from 'react'
 import MovieCard from './MovieCard'
 
 const MovieList = ({title, movies}) => {
+    console.log(movies, 'mmmmm')
+    if(!movies) return null;
 
   return (
     <div className='py-4'>
@@ -9,7 +11,7 @@ const MovieList = ({title, movies}) => {
     <div className='flex overflow-auto'>
 
           <div className='flex'>
-              {movies?.map((movie) => (<MovieCard key={movie.id} poster_path={movie.poster_path} />))}
+              {movies?.map((movie) => (<MovieCard key={movie?.id} poster_path={movie?.poster_path} />))}
           </div>
 
       </div>
@@ -17,4 +19,4 @@ const MovieList = ({title, movies}) => {
   )
 }
 
-export default MovieList
+export default MovieList;

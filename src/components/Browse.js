@@ -7,7 +7,7 @@ import MainContainer from './MainContainer';
 import SecondaryContainer from './SecondaryContainer';
 import useUpcomingMovies from '../hooks/useUpcomingMovies';
 import { useSelector } from 'react-redux';
-import GptSearch from './GptSearch';
+import GptSearch from '../components/GptSearch';
 
 const Browse = () => {
 
