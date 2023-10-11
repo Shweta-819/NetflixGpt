@@ -66,7 +66,6 @@ const Header = () => {
           
           <button className='py-2 px-4 mx-4 my-2 bg-purple-800 text-white rounded-lg' onClick={handleGPT} >{showGptSearch ?  "Home Page" : 'GPT Search'}</button>
 
-          {/* <img className='w-12 h-12 my-6 ' src={user?.photoURL} alt="user" /> */}
           <button className='text-white rounded-lg bg-lime-800 py-2 px-4 mx-4 my-2 md:mx-4 ' onClick={handleSignout}>Sign Out</button></>)}
 
       </div>

@@ -24,7 +24,7 @@ const Login = () => {
 
   const handleform = () => {
     const message = validatedata(email.current.value, password.current.value);
-    console.log(password.current.value)
+    // console.log(password.current.value)
     setErrorMessage(message);
 
     if (message) return;
